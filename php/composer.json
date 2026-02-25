@@ -1,0 +1,33 @@
+{
+  "name": "complyance/sdk-tests-php",
+  "description": "Comprehensive test suite for Complyance PHP SDK",
+  "type": "project",
+  "require": {
+    "php": ">=7.4",
+    "complyance/unify-sdk": "*"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../../sdk/complyance-php",
+      "options": {
+        "symlink": false
+      }
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^9.5|^10.0",
+    "phpunit/php-code-coverage": "^9.2|^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Complyance\\SDK\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "test:ksa": "phpunit --filter KSA",
+    "test:malaysia": "phpunit --filter Malaysia",
+    "test:coverage": "phpunit --coverage-html test-output/coverage"
+  }
+}

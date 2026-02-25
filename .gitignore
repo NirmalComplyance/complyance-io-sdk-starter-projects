@@ -1,0 +1,14 @@
+# PHP
+php/vendor/
+php/composer.lock
+
+# .NET
+dotnet/bin/
+dotnet/obj/
+dotnet/test-output/
+
+# Java
+java/target/
+
+# Local env
+java/src/.env
