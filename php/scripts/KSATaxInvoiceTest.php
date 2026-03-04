@@ -79,9 +79,9 @@ try {
             'seller_party_id' => 'SELLER-SA-001',
             'vat_number_type' => 'VAT',
             'vat_number' => '300593161500003',
-            'tax_scheme' => 'VAT',
+            'tax_scheme' => 'CRN',
             'registration_number' => '2034567890',
-            'registration_type' => 'VAT',
+            'registration_type' => 'CRN',
             'registration_scheme' => 'SA:CRN',
             'authority_name' => 'Ministry of Commerce - Riyadh',
             'peppol_id' => '0235:3008213264',
@@ -104,7 +104,7 @@ try {
             'buyer_party_id' => 'BUYER-SA-001',
             'buyer_vat_type' => 'VAT',
             'buyer_vat_number' => '300889867100003',
-            'buyer_tax_scheme' => 'VAT',
+            'buyer_tax_scheme' => 'CRN',
             'buyer_registration_number' => '2034567890',
             'buyer_registration_type' => 'CRN',
             'buyer_registration_scheme' => 'CRN',
@@ -201,7 +201,7 @@ try {
         Country::from($TEST_COUNTRY),
         Operation::from(Operation::SINGLE),
         Mode::from(Mode::DOCUMENTS),
-        Purpose::from(Purpose::INVOIC), // Using user's preference
+        Purpose::from(Purpose::INVOICING), // Using user's preference
         $payload
     );
 

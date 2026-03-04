@@ -22,7 +22,7 @@ import io.complyance.sdk.Source;
 import io.complyance.sdk.SourceType;
 import io.complyance.sdk.UnifyResponse;
 
-public class UAETaxInvoiceTest {
+public class UAECreditNoteTest {
 
     private static String sourceId = "YS";
     private static String sourceVersion = "1.2";
@@ -30,7 +30,7 @@ public class UAETaxInvoiceTest {
 
     public static void main(String[] args) {
 
-        System.out.println("=== UAE Tax Invoice Test ===");
+        System.out.println("=== UAE Credit Note Test ===");
 
         try {
             configureSDK();
@@ -38,7 +38,7 @@ public class UAETaxInvoiceTest {
             Map<String, Object> payload = createUAETestPayload();
             System.out.println("Payload created successfully.");
 
-            testUAETaxInvoiceFlow(payload);
+            testUAECreditNoteFlow(payload);
 
         } catch (Exception e) {
             System.err.println("Unexpected error: " + e.getMessage());
@@ -248,14 +248,14 @@ public class UAETaxInvoiceTest {
         return payload;
     }
 
-    private static void testUAETaxInvoiceFlow(Map<String, Object> payload) {
+    private static void testUAECreditNoteFlow(Map<String, Object> payload) {
 
         try {
 
             UnifyResponse response = GETSUnifySDK.pushToUnify(
                     sourceId,
                     sourceVersion,
-                    LogicalDocType.TAX_INVOICE,
+                    LogicalDocType.TAX_INVOICE_CREDIT_NOTE,
                     Country.AE,
                     Operation.SINGLE,
                     Mode.DOCUMENTS,

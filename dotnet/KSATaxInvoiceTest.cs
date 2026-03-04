@@ -99,20 +99,24 @@ namespace Complyance.SDK.TestProject
             var invoiceData = new Dictionary<string, object>
             {
                 ["invoice_number"] = invoiceNumber,
-                ["invoice_date"] = DateTime.UtcNow.ToString("yyyy-MM-dd"),
-                ["invoice_time"] = DateTime.UtcNow.ToString("HH:mm:ss"),
+                ["document_type"] = "tax_invoice",
+                ["invoice_date"] = "2026-02-26",
+                ["invoice_time"] = "14:30:00.000",
                 ["currency_code"] = "SAR",
                 ["vat_currency_code"] = "SAR",
                 ["exchange_percentage"] = 1,
-                ["invoice_startDate"] = DateTime.UtcNow.ToString("yyyy-MM-dd"),
-                ["invoice_endDate"] = DateTime.UtcNow.AddDays(2).ToString("yyyy-MM-dd"),
-                ["invoice_due_date"] = DateTime.UtcNow.AddDays(30).ToString("yyyy-MM-dd"),
+                ["invoice_startDate"] = "2026-02-26",
+                ["invoice_endDate"] = "2026-02-26",
+                ["invoice_due_date"] = "2026-02-26",
                 ["line_extension_amount"] = 20000.00,
                 ["tax_exclusive_amount"] = 20000.00,
                 ["total_tax_amount"] = 3000.00,
                 ["total_amount"] = 23000.00,
                 ["total_payable_amount"] = 23000.00,
                 ["paid_Amount"] = 0,
+                ["due_Amount"] = 0,
+
+
                 ["total_discount"] = 0,
                 ["PaymentMethod"] = "CASH"
             };

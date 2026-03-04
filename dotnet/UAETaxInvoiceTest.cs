@@ -11,9 +11,9 @@ namespace Complyance.SDK.TestProject
 {
     public class UAETaxInvoiceTest : IAsyncLifetime
     {
-        private const string ApiKey = "ak_930fb93cc1dce421a1c26ddd37a8";
-        private const string SourceName = "Q";
-        private const string SourceVersion = "1";
+        private const string ApiKey = "ak_818533253a30b5c34b818f423533";
+        private const string SourceName = "YS";
+        private const string SourceVersion = "1.2";
         private static readonly Country TestCountry = Country.AE;
 
         public async Task InitializeAsync()
@@ -58,7 +58,7 @@ public async Task TestUAETaxInvoiceFlow()
             TestCountry,
             Operation.Single,
             Mode.Documents,
-            Purpose.Invoicing,
+            Purpose.Mapping,
             payload);
 
         Assert.NotNull(response);
@@ -177,7 +177,7 @@ public async Task TestUAETaxInvoiceFlow()
                 ["registration_type"] = "TL",
                 ["registration_scheme"] = "AE:TL",
                 ["authority_name"] = "Dubai Department of Economic Development",
-                ["peppol_id"] = "0235:1578882063",
+                ["peppol_id"] = "0235:1189748191",
                 ["seller_email"] = "contact@abctrading.ae",
                 ["seller_phone"] = "+971-4-1234567",
                 ["seller_contact_name"] = "Ahmed Al Maktoum",
@@ -203,7 +203,7 @@ public async Task TestUAETaxInvoiceFlow()
                 ["buyer_registration_type"] = "TL",
                 ["buyer_registration_scheme"] = "TL",
                 ["buyer_authority_name"] = "Abu Dhabi Department of Economic Development",
-                ["buyer_peppol_id"] = "0235:1281034637",
+                ["buyer_peppol_id"] = "0235:1297201011",
                 ["buyer_email"] = "purchasing@xyzcorp.ae",
                 ["buyer_phone"] = "+971-2-9876543",
                 ["buyer_contact_name"] = "Fatima Al Mansouri",

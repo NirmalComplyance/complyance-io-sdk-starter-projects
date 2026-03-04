@@ -48,7 +48,7 @@ try {
     // Create payload
     $payload = [
         'invoice_data' => [
-            'document_number' => '',
+            'document_number' =>  $invoiceNumber,
             'document_id' => $uniqueId,
             'document_type' => 'tax_invoice',
             'invoice_date' => getDynamicDate(0),
