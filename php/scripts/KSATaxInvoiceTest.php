@@ -42,153 +42,127 @@ try {
     GETSUnifySDK::configure($config);
     echo "✅ SDK Configured\n";
 
-    $invoiceNumber = 'SA-INV-' . (new \DateTime())->format('YmdHisv');
+    $invoiceNumber = 'KSA-INV-' . (new \DateTime())->format('YmdHisv');
     $uniqueId = bin2hex(random_bytes(16));
 
     // Create payload
     $payload = [
         'invoice_data' => [
-            'document_number' => $invoiceNumber,
-            'document_id' => $uniqueId,
-            'document_type' => 'tax_invoice',
-            'invoice_date' => getDynamicDate(-1),
-            'invoice_time' => '14:30:00Z',
+            'invoice_number' => $invoiceNumber,
+            'invoice_date' => '2025-11-04',
+            'invoice_time' => '14:30:00.000Z',
             'currency_code' => 'SAR',
-            'tax_currency_code' => 'SAR',
-            'due_date' => getDynamicDate(30),
-            'period_start_date' => getDynamicDate(-30),
-            'period_end_date' => getDynamicDate(1),
-            'period_frequency' => 'MONTHLY',
-            'exchange_rate' => 1.0,
-            'line_extension_amount' => 10000.00,
-            'tax_exclusive_amount' => 10000.00,
-            'total_tax_amount' => 1500.00,
-            'total_amount' => 11500.00,
-            'total_allowances' => 0.00,
-            'total_charges' => 0.00,
-            'prepaid_amount' => 0.00,
-            'amount_due' => 11500.00,
-            'rounding_amount' => 0.00,
-            'original_reference_id' => 'SA-INV-ORIG-001',
-            'credit_note_reason' => 'Goods returned'
+            'total_amount' => 23000.00,
+            'total_payable_amount' => 23000.00,
+            'tax_exclusive_amount' => 20000.00,
+            'line_extension_amount' => 20000.00,
+            'total_tax_amount' => 3000.00,
+            'paid_Amount' => 0,
+            'invoice_endDate' => '2025-07-21',
+            'invoice_startDate' => '2025-07-19',
+            'vat_currency_code' => 'SAR',
+            'exchange_percentage' => 1,
+            'invoice_due_date' => '2026-07-30',
+            'total_discount' => '0',
+            'PaymentMethod' => 'CASH'
         ],
 
         'seller_info' => [
-            'seller_name' => 'Al Riyadh Trading Co.',
-            'seller_trade_name' => 'Al Riyadh Trading',
-            'seller_party_id' => 'SELLER-SA-001',
-            'vat_number_type' => 'VAT',
-            'vat_number' => '300593161500003',
-            'tax_scheme' => 'CRN',
-            'registration_number' => '2034567890',
-            'registration_type' => 'CRN',
-            'registration_scheme' => 'SA:CRN',
-            'authority_name' => 'Ministry of Commerce - Riyadh',
-            'peppol_id' => '0235:3008213264',
-            'seller_email' => 'contact@alriyadhtrading.sa',
-            'seller_phone' => '+966-11-1234567',
-            'seller_contact_name' => 'Mohammed Al Saud',
-            'street_name' => 'King Fahd Road',
-            'additional_address' => 'Building 456',
-            'building_number' => '4562',
+            'company_name' => 'Advanced Tech Solutions LLC',
+            'vat_registration' => '310123456700003',
+            'tax_scheme' => 'VAT',
+            'street_address' => 'King Fahd Road',
+            'additional_address_info' => 'Building 123',
+            'building_number' => '1234',
+            'district_name' => 'Al Olaya',
             'city_name' => 'Riyadh',
-            'state_province' => 'RIYADH',
+            'state_name' => 'Riyadh Province',
             'postal_code' => '11564',
             'country_code' => 'SA',
-            'seller_District' => 'Saudi Arabia'
+            'seller_id' => '2034567890',
+            'phone' => '+966501234567',
+            'email' => 'contact@advancedtech.sa',
+            'contact_name' => 'Ahmed Al-Rashid',
+            'Crn_number' => '2034567890',
+            'Additional_Type' => 'CRN'
         ],
 
         'buyer_info' => [
-            'buyer_name' => 'Jeddah Supplies LLC',
-            'buyer_trade_name' => 'Jeddah Supplies',
-            'buyer_party_id' => 'BUYER-SA-001',
-            'buyer_vat_type' => 'VAT',
-            'buyer_vat_number' => '300889867100003',
-            'buyer_tax_scheme' => 'CRN',
-            'buyer_registration_number' => '2034567890',
-            'buyer_registration_type' => 'CRN',
-            'buyer_registration_scheme' => 'CRN',
-            'buyer_authority_name' => 'Ministry of Commerce - Jeddah',
-            'buyer_peppol_id' => '0235:3008215673',
-            'buyer_email' => 'purchasing@jeddahsupplies.sa',
-            'buyer_phone' => '+966-12-9876543',
-            'buyer_contact_name' => 'Fatima Al Zahrani',
-            'buyer_street_name' => 'Prince Sultan Road',
-            'buyer_additional_address' => 'Tower 3',
-            'buyer_building_number' => '1234',
-            'buyer_city' => 'Jeddah',
-            'buyer_state_province' => 'MAKKAH',
-            'buyer_postal_code' => '21589',
+            'buyer_name' => 'Global Manufacturing Co.',
+            'buyer_vat' => '310987654300003',
+            'buyer_tax_scheme' => 'VAT',
+            'buyer_address' => 'Industrial City',
+            'buyer_additional_address_info' => 'Block A',
+            'buyer_building' => '4567',
+            'buyer_district' => 'Industrial Area',
+            'buyer_city' => 'Dammam',
+            'buyer_state' => 'Damman Province',
+            'buyer_postal' => '31461',
             'buyer_country' => 'SA',
-            'buyer_District' => 'Saudi Arabia'
+            'buyer_id' => '2034567890',
+            'crn_Number' => '2034567890',
+            'Additional_Type' => 'CRN'
         ],
 
         'line_items' => [
             [
-                'line_id' => '1',
-                'item_name' => 'Office Equipment',
-                'item_description' => 'Professional office equipment package',
-                'quantity' => 10.0,
+                'item_id' => 'ITEM001',
+                'item_name' => 'Industrial Server System',
+                'quantity' => 2,
                 'unit_code' => 'PCE',
-                'unit_price' => 500.00,
-                'gross_price' => 500.00,
-                'line_taxable_value' => 5000.00,
-                'Discount' => 0.00,
+                'unit_price' => 8500.00,
+                'tax_amount' => 2550.00,
                 'tax_category' => 'S',
-                'tax_rate' => 15.0,
-                'tax_amount' => 750.00,
-                'line_total' => 5750.00,
-                'item_type' => 'GOODS',
-                'country_of_origin' => 'SA',
-                'classification_code' => '8471',
-                'classification_scheme' => 'HS',
-                'seller_item_code' => 'SKU-001',
-                'buyer_item_code' => 'BUYER-SKU-001',
-                'batch_number' => 'BATCH-2024-001'
+                'tax_rate' => 15,
+                'discount_amount' => 0,
+                'sub_Total' => 19550,
+                'taxable_amount' => 17000
+            ],
+            [
+                'item_id' => 'ITEM002',
+                'item_name' => 'Network Security Module',
+                'quantity' => 1,
+                'unit_code' => 'PCE',
+                'unit_price' => 3000.00,
+                'tax_amount' => 450.00,
+                'tax_category' => 'S',
+                'tax_rate' => 15,
+                'discount_amount' => 0,
+                'sub_Total' => 3450,
+                'taxable_amount' => 3000
             ]
         ],
 
-        'ksa_extensions' => [
-            'unique_identifier' => $uniqueId,
-            'invoiced_object_id' => 'OBJECT-2024-001',
-            'taxpoint_date' => getDynamicDate(0),
-            'total_amount_including_tax_in_sar' => 11500.00,
-            'authority_name' => 'Ministry of Commerce - Riyadh',
-            'buyer_authority_name' => 'Ministry of Commerce - Jeddah',
-            'business_process_type' => 'urn:peppol:bis:billing',
-            'specification_identifier' => 'urn:peppol:pint:sa:invoice:v1'
-        ],
-
-        'payment_info' => [
-            'payment_id' => 'PAY-001',
-            'payment_means_code' => 'CREDIT',
-            'payment_means_text' => 'Bank Transfer',
-            'remittance_info' => 'Payment for Invoice ' . $invoiceNumber,
-            'account_id' => 'SA1234567890123456789012',
-            'account_name' => 'Al Riyadh Trading Co.',
-            'bank_id' => 'SABN0001'
-        ],
-
-        'payment_terms' => [
-            [
-                'instructions_id' => 'TERMS-001',
-                'note' => 'Net 30 days',
-                'amount' => 11500.00,
-                'due_date' => getDynamicDate(30)
+        'extensions' => [
+            'sa_prepayment' => [
+                [
+                    'paymentId' => 'PP-2024-001',
+                    'issueDate' => '2024-01-15T14:30:00Z',
+                    'documentType' => 'tax_invoice_prepayment_invoice',
+                    'vatCategory' => 'S',
+                    'vatRate' => 15.0,
+                    'taxableAmount' => 1000.00,
+                    'taxAmount' => 150.00,
+                    'adjustmentAmount' => 1150.00
+                ]
             ]
         ],
 
-        'supporting_documents' => [
+        'destinations' => [
             [
-                'type' => 'purchaseOrderReference',
-                'id' => 'PO-2024-001234'
+                'type' => 'tax_authority',
+                'details' => [
+                    'authority' => 'ZATCA',
+                    'country' => 'SA',
+                    'document_type' => 'tax_invoice'
+                ]
             ]
         ],
 
         'additional_data' => [
-            'delivery_date' => getDynamicDate(0),
-            'order_reference' => 'PO-2024-001234',
-            'source_system' => 'ksa-source-system'
+            'order_reference' => 'PO-2024-5678',
+            'delivery_date' => '2024-01-20',
+            'source_system' => 'test-soruce-11111111'
         ]
     ];
 

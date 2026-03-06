@@ -22,7 +22,7 @@ namespace Complyance.SDK.TestProject
             "  \"invoice_data\": {",
             "    \"invoice_number\": \"{{AUTO_KSA_INVOICE_NUMBER}}\",",
             "    \"invoice_date\": \"2026-02-26\",",
-            "    \"invoice_time\": \"14:30:00.000\",",
+            "    \"invoice_time\": \"14:30:00.000Z\",",
             "    \"document_type\": \"tax_invoice\",",
             "    \"currency_code\": \"SAR\",",
             "    \"vat_currency_code\": \"SAR\",",

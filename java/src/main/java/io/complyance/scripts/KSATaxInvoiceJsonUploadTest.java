@@ -27,7 +27,7 @@ public class KSATaxInvoiceJsonUploadTest {
             "  \"invoice_data\": {",
             "    \"invoice_number\": \"{{AUTO_KSA_INVOICE_NUMBER}}\",",
             "    \"invoice_date\": \"2025-11-04\",",
-            "    \"invoice_time\": \"14:30:00.000\",",
+            "    \"invoice_time\": \"14:30:00.000Z\",",
             "    \"currency_code\": \"SAR\",",
             "    \"total_amount\": 23000.0,",
             "    \"total_payable_amount\": 23000.0,",

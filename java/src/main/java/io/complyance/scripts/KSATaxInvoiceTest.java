@@ -72,7 +72,7 @@ public class KSATaxInvoiceTest {
 
         // String invoiceNumber = System.getenv("INVOICE_NUMBER") != null ? System.getenv("INVOICE_NUMBER") : "from sdk 004";
         String invoiceDate = System.getenv("INVOICE_DATE") != null ? System.getenv("INVOICE_DATE") : "2025-11-04";
-        String invoiceTime = System.getenv("INVOICE_TIME") != null ? System.getenv("INVOICE_TIME") : "14:30:00.000";
+        String invoiceTime = System.getenv("INVOICE_TIME") != null ? System.getenv("INVOICE_TIME") : "14:30:00.000Z";
         String invoiceStartDate = System.getenv("INVOICE_START_DATE") != null ? System.getenv("INVOICE_START_DATE") : "2025-07-19";
         String invoiceEndDate = System.getenv("INVOICE_END_DATE") != null ? System.getenv("INVOICE_END_DATE") : "2025-07-21";
         String invoiceDueDate = System.getenv("INVOICE_DUE_DATE") != null ? System.getenv("INVOICE_DUE_DATE") : "2026-07-30";
