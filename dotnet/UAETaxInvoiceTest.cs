@@ -58,7 +58,7 @@ public async Task TestUAETaxInvoiceFlow()
             TestCountry,
             Operation.Single,
             Mode.Documents,
-            Purpose.Mapping,
+            Purpose.Invoicing,
             payload);
 
         Assert.NotNull(response);
