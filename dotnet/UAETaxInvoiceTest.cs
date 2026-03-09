@@ -11,9 +11,9 @@ namespace Complyance.SDK.TestProject
 {
     public class UAETaxInvoiceTest : IAsyncLifetime
     {
-        private const string ApiKey = "ak_818533253a30b5c34b818f423533";
-        private const string SourceName = "YS";
-        private const string SourceVersion = "1.2";
+        private const string ApiKey = "";
+        private const string SourceName = "";
+        private const string SourceVersion = "";
         private static readonly Country TestCountry = Country.AE;
 
         public async Task InitializeAsync()

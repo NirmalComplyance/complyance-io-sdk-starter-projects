@@ -17,9 +17,9 @@ use ComplyanceSDK\Enums\SourceType;
 use ComplyanceSDK\Models\Source;
 
 // Constants - Using User's latest configuration
-$API_KEY = 'ak_818533253a30b5c34b818f423533';
-$SOURCE_NAME = 'YS';
-$SOURCE_VERSION = '1.2';
+$API_KEY = '';
+$SOURCE_NAME = '';
+$SOURCE_VERSION = '';
 $TEST_COUNTRY = Country::SA;
 
 // Disable background queue worker for scripts

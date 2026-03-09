@@ -22,9 +22,9 @@ import io.complyance.sdk.SourceType;
 import io.complyance.sdk.UnifyResponse;
 
 public class KSATaxInvoiceTest {
-    private static String sourceId = "YS";
-    private static String sourceVersion = "1.2";
-    private static String apiKey = "ak_818533253a30b5c34b818f423533";
+    private static String sourceId = "";
+    private static String sourceVersion = "";
+    private static String apiKey = "";
 
     public static void main(String[] args) {
         try {

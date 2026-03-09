@@ -13,9 +13,9 @@ use ComplyanceSDK\Enums\Purpose;
 use ComplyanceSDK\Enums\SourceType;
 use ComplyanceSDK\Models\Source;
 
-$API_KEY = 'ak_818533253a30b5c34b818f423533';
-$SOURCE_NAME = 'YS';
-$SOURCE_VERSION = '1.2';
+$API_KEY = '';
+$SOURCE_NAME = '';
+$SOURCE_VERSION = '';
 $TEST_COUNTRY = Country::AE;
 
 putenv('COMPLYANCE_SDK_DISABLE_QUEUE_WORKER=true');
